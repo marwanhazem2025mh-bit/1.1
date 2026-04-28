@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖Hekayetna💖</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop></audio>
+
+<div class="container active" id="loginPage">
+    <h1>💖 Hekayetna 💖</h1>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <button onclick="checkPassword()">Enter My Heart</button>
+    <p id="message"></p>
+</div>
+
+<div class="container" id="letterPage">
+    <h1>My Love</h1>
+    <div class="letter" id="letterText"></div>
+    <button onclick="nextPage('videoPage')">Next</button>
+</div>
+
+<div class="container" id="videoPage">
+    <iframe id="videoFrame"></iframe>
+    <button onclick="nextPage('heartPage')">Next</button>
+</div>
+
+<div class="container" id="heartPage">
+    <div class="heart">❤️</div>
+    <h2 id="heartMsg"></h2>
+    <button onclick="nextPage('photosPage')">Next</button>
+</div>
+
+<div class="container" id="photosPage">
+    <img id="photoDisplay">
+    <button onclick="prevPhoto()">⬅</button>
+    <button onclick="nextPhoto()">➡</button>
+</div>
+
+<button id="musicToggle" onclick="toggleMusic()">🎵</button>
+
+</body>
+</html>

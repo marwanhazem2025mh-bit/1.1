@@ -1,0 +1,51 @@
+body {
+    margin:0;
+    font-family: sans-serif;
+    transition: all 0.5s ease;
+}
+
+/* THEMES */
+body.romantic { background: linear-gradient(#ff9a9e, #fad0c4); }
+body.playful { background: linear-gradient(#a18cd1, #fbc2eb); }
+body.modern { background: linear-gradient(#1e1e2f, #3a3a5a); color:white; }
+
+.container {
+    display:none;
+    text-align:center;
+    padding:40px;
+}
+
+.container.active {
+    display:block;
+    animation: fade 0.6s ease;
+}
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+button {
+    padding:10px 20px;
+    margin:10px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.heart {
+    font-size:80px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {transform:scale(1);}
+    50% {transform:scale(1.2);}
+    100% {transform:scale(1);}
+}
+
+#musicToggle {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+}
