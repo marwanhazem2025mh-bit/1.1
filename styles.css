@@ -1,7 +1,13 @@
 body {
-    margin:0;
-    font-family: sans-serif;
-    transition: all 0.5s ease;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 200% 200%;
+    animation: bgMove 10s ease infinite;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* THEMES */
@@ -45,7 +51,41 @@ button {
 }
 
 #musicToggle {
-    position:fixed;
-    bottom:20px;
-    right:20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+.envelope {
+    transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.envelope-flap {
+    transition: transform 1.2s ease;
+}
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.12); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.15); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+.beating-heart {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 80, 0.6));
+}
+.photo-slide {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(0.98);
+}
+
+.photo-slide.active {
+    transform: scale(1);
 }

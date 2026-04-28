@@ -7,16 +7,53 @@ const CONFIG = {
   heartMessage: "You Mean Everything To Me",
   photos: ["img1.jpg","img2.jpg","img3.jpg"]
 };
+const MUSIC_URL = "https://youtu.be/fGFB29lQ-Vs?si=lVadoZtNr0OhPXnt";
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
 
-const LETTER = `My Love,
+music.src = MUSIC_URL;
 
-I don’t think words will ever be enough to explain what you mean to me… but I’ll spend forever trying anyway.
+musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        musicBtn.innerText = "⏸";
+    } else {
+        music.pause();
+        musicBtn.innerText = "🎵";
+    }
+});
 
-From the moment you came into my life, everything changed. You became my peace, my happiness, and the reason behind so many of my smiles.
+function typeWriter(element, text, speed = 35) {
+    let i = 0;
+    element.innerHTML = "";
 
-If I had to choose again… I would still choose you. Every time. In every life.
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+
+    typing();
+}
+const letterText = `My Love,
+
+I don’t think words will ever truly be enough to explain what you mean to me… but I’ll spend forever trying anyway.
+
+From the moment you came into my life, everything changed. You didn’t just bring happiness… you became it.
+
+You are the calm in my chaos, the warmth in my coldest days, and the reason my heart feels full in ways I never knew were possible.
+
+Being with you doesn’t just feel right… it feels like home.
+
+And if I had to live this life all over again…  
+I would still choose you.  
+In every world, in every lifetime… always you.
 
 Forever yours ❤️`;
+
+typeWriter(document.querySelector(".letter-content"), letterText);
 
 let currentPhoto = 0;
 
